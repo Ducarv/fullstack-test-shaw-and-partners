@@ -1,5 +1,7 @@
 import { User } from "../domain/entities/User";
 
+type Query = string | undefined;
+
 export interface UserRepository {
-    getAll: () => Promise<User[] | undefined>
+    getAll: (query: Query) => Promise<User[] | undefined>
 }
