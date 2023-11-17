@@ -23,6 +23,7 @@ model File {
   filename   String
   mimetype  String
   encoding  String
+  content   Bytes
   createdAt DateTime @default(now())
   updatedAt DateTime @updatedAt
 }
