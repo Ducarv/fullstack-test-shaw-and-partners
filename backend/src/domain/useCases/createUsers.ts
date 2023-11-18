@@ -1,7 +1,7 @@
 import { UserRepository } from "../../repository/userRepository";
 import { User } from "../entities/User";
 
-export class CreateManyUsersUseCase {
+export class CreateUsersUseCase {
     constructor(private userRepository: UserRepository) {}
 
     async execute(users: User[]) {
