@@ -14,10 +14,10 @@ export class UploadFileController {
 
         try {
             const uploadedFile = await this.uploadFileUseCase.execute(file);
-            response.status(201).json(uploadedFile);
+            response.status(200).json({ message: "The file was uploaded successfully"});
         } catch(error: unknown) {
             if(error instanceof Error) {
-                response.status(400).json(error.message);
+                response.status(500).json(error.message);
             }
         }
     }

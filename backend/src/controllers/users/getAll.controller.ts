@@ -16,7 +16,9 @@ export class GetAllUsersController {
                 response.status(200).json(users)
             }
         } catch(error: unknown) {
-            response.status(404).json({ error: "Cannot get all users." })
+            if(error instanceof Error) {
+                response.status(500).json(error.message);
+            }
         }
     }
 }
