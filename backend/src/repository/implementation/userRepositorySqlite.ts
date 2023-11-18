@@ -1,7 +1,8 @@
+import { User } from "../../domain/entities/User";
 import { prisma } from "../../infra/database/prisma/prisma";
-import { QueryType } from "../userRepository";
+import { QueryType, UserRepository } from "../userRepository";
 
-export class UserRepositorySQLite {
+export class UserRepositorySQLite implements UserRepository {
     async getAll(query: QueryType) {
         const searchTerm = query?.toString().toLowerCase();
         let searchResults;
@@ -24,6 +25,20 @@ export class UserRepositorySQLite {
             return searchResults;
         } catch(error: unknown) {
             if(error instanceof Error) {
+                throw new Error(error.message);
+            }
+        }
+    }
+
+    async create(user: User) {
+        try {
+            const newUser = await prisma.user.create({
+                data: user
+            })
+
+            return newUser;
+        } catch(error: unknown) {
+            if (error instanceof Error) {
                 throw new Error(error.message);
             }
         }

@@ -3,8 +3,11 @@ import readLine from "readline";
 import { File } from "../../domain/entities/File";
 import { prisma } from "../../infra/database/prisma/prisma";
 import { User } from "../../domain/entities/User";
+import { UserRepositorySQLite } from "./userRepositorySqlite";
 
 export class FileRepositorySQLite {
+    constructor(private userRepository: UserRepositorySQLite) {};
+
     async upload(data: File) {
         try {
             if (!data) {
@@ -41,13 +44,11 @@ export class FileRepositorySQLite {
             }
 
             for await (let { name, city, country, favorite_sport } of users) {
-                await prisma.user.create({
-                   data: {
-                    name,
-                    city,
-                    country,
-                    favorite_sport
-                   } 
+                await this.userRepository.create({
+                  name,
+                  city,
+                  country,
+                  favorite_sport
                 })
             } 
     
