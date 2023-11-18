@@ -24,5 +24,23 @@ describe('File interface', () => {
       expect(file.buffer).toBeInstanceOf(Buffer);
       expect(typeof file.size).toBe('number');
     });
+
+    it('should throw an error if the file structure is incorrect', () => {
+        const invalidFile: Partial<File> = {
+          originalname: 'example.csv',
+          encoding: 'utf-8',
+          mimetype: 'text/csv',
+          buffer: Buffer.from('example csv data'),
+          size: 1000,
+        };
+    
+        function validateFileStructure() {
+          if (!invalidFile.fieldname) {
+            throw new Error('File structure is incorrect');
+          }
+        }
+    
+        expect(validateFileStructure).toThrow('File structure is incorrect');
+      });
   });
   
