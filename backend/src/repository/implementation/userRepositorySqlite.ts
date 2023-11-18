@@ -1,5 +1,5 @@
 import { User } from "../../domain/entities/User";
-import { prisma } from "../../infra/database/prisma/prisma";
+import { prisma } from "../../infra/database/prisma";
 import { QueryType, UserRepository } from "../userRepository";
 
 export class UserRepositorySQLite implements UserRepository {

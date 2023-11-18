@@ -1,7 +1,7 @@
 import { Readable } from "stream";
 import readLine from "readline";
 import { File } from "../../domain/entities/File";
-import { prisma } from "../../infra/database/prisma/prisma";
+import { prisma } from "../../infra/database/prisma";
 import { User } from "../../domain/entities/User";
 import { UserRepositorySQLite } from "./userRepositorySqlite";
 import { FileRepository } from "../fileRepository";
