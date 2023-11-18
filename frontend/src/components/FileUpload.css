@@ -1,101 +1,69 @@
 .file-upload-box {
-    width: 400px;
-    margin: 0 auto;
-    padding: 20px;
-    border: 1px solid #ccc;
-    border-radius: 5px;
-    text-align: center;
+  width: 90%;
+  max-width: 400px;
+  margin: 0 auto;
+  padding: 20px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  text-align: center;
 }
 
 h1 {
-    font-size: 24px;
-    margin-bottom: 20px;
+  font-size: 24px;
+  margin-bottom: 20px;
 }
 
 form {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 input[type="file"] {
-    padding: 10px;
-    border: 1px solid #ccc;
-    border-radius: 5px;
-    margin-bottom: 10px;
+  width: calc(100% - 20px); 
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  margin-bottom: 10px;
+  box-sizing: border-box; 
 }
 
 button {
-    padding: 10px 20px;
-    border: none;
-    background-color: #007bff;
-    color: #fff;
-    border-radius: 5px;
-    cursor: pointer;
+  width: 100%; 
+  max-width: 360px; 
+  padding: 10px 20px;
+  border: none;
+  background-color: #007bff;
+  color: #fff;
+  border-radius: 5px;
+  cursor: pointer;
+  box-sizing: border-box; 
+  margin-bottom: 10px;
 }
 
 @media (max-width: 768px) {
   .file-upload-box {
     width: 100%;
-    padding: 10px;
-    border-radius: 0px;
+    padding: 15px;
+    border-radius: 0;
   }
 
   h1 {
-    font-size: 18px;
-    margin-bottom: 10px;
-  }
-
-  form {
-    flex-direction: column-reverse;
-    align-items: center;
+    font-size: 20px;
+    margin-bottom: 15px;
   }
 
   input[type="file"] {
-    width: 100%;
-    padding: 5px;
-    margin-bottom: 5px;
+    width: calc(100% - 20px); 
+    padding: 8px;
+    margin-bottom: 10px;
   }
 
   button {
     width: 100%;
-    padding: 5px 10px;
-    margin-top: 5px;
+    padding: 8px 16px;
     font-size: 16px;
-  }
-}
-
-@media (min-width: 769px) {
-  .file-upload-box {
-    width: 400px;
-    margin: 0 auto;
-    padding: 20px;
-    border: 1px solid #ccc;
-    border-radius: 5px;
-    text-align: center;
-  }
-
-  h1 {
-    font-size: 24px;
-    margin-bottom: 20px;
-  }
-
-  form {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-  }
-
-  input[type="file"] {
-    width: 100%;
-    padding: 10px;
-    margin-bottom: 10px;
-  }
-
-  button {
-    width: 100%;
-    padding: 10px 20px;
-    margin-top: 5px;
-    font-size: 18px;
+    margin-top: 10px;
+    margin-bottom: 0; 
   }
 }
