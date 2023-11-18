@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "start:dev": "ts-node-dev --respawn --transpile-only src/app.ts",
-    "start": "ts-node src/app.ts",
+    "start": "node ./dist/app.js",
     "build": "npx tsc",
     "test": "jest"
   },
