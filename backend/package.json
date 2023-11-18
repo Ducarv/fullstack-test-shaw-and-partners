@@ -16,7 +16,7 @@
   "author": "",
   "license": "ISC",
   "prisma": {
-    "schema": "src/infra/database/prisma/schema.prisma"
+    "schema": "prisma/schema.prisma"
   },
   "dependencies": {
     "@prisma/client": "^5.6.0",
