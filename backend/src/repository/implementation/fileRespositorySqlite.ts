@@ -4,8 +4,9 @@ import { File } from "../../domain/entities/File";
 import { prisma } from "../../infra/database/prisma/prisma";
 import { User } from "../../domain/entities/User";
 import { UserRepositorySQLite } from "./userRepositorySqlite";
+import { FileRepository } from "../fileRepository";
 
-export class FileRepositorySQLite {
+export class FileRepositorySQLite implements FileRepository {
     constructor(private userRepository: UserRepositorySQLite) {};
 
     async upload(data: File) {
