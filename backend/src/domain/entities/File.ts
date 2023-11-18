@@ -1,7 +1,9 @@
 export interface File {
     id?: number;
-    filename: string;
-    mimetype: string;
+    fieldname: string;
+    originalname: string;
     encoding: string;
-    content: Buffer;
+    mimetype: string;
+    buffer: Buffer
+    size: number;
 }
