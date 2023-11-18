@@ -5,11 +5,11 @@ export class GetAllUsersController {
     constructor(private getAllUseCase: GetAllUsersUseCase) {};
 
     async handle(request: Request, response: Response) {
-        const { q } = request.query;
+        const query = request.query?.q;
 
         try {
-            if(q) {
-                const usersSearched = await this.getAllUseCase.execute(q as string);
+            if(query) {
+                const usersSearched = await this.getAllUseCase.execute(query as string);
                 response.status(200).json(usersSearched);
             } else {
                 const users = await this.getAllUseCase.execute();
