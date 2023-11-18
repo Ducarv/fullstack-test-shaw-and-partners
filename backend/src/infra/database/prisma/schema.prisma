@@ -19,11 +19,13 @@ model User {
 }
 
 model File {
-  id        Int      @id @default(autoincrement())
-  filename   String
-  mimetype  String
-  encoding  String
-  content   Bytes
-  createdAt DateTime @default(now())
-  updatedAt DateTime @updatedAt
+  id           Int      @id @default(autoincrement())
+  fieldname    String
+  originalname String
+  encoding     String
+  mimetype     String
+  buffer       Bytes
+  size         Int
+  createdAt    DateTime @default(now())
+  updatedAt    DateTime @updatedAt
 }
